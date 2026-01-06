@@ -545,11 +545,25 @@
 </template>
 
 <script>
+
 export default {
   name: 'About',
+  data() {
+    return {
+
+    }
+  },
 
   mounted() {
+    this.getAbout()
+  },
 
+  methods: {
+    async getAbout() {
+      const { $axios } = useNuxtApp()
+      const res = await $axios.get('/about')
+      console.log(res)
+    }
   },
 
   setup() {

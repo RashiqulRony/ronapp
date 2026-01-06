@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
+    runtimeConfig: {
+        public: {
+            apiUrl: process.env.NUXT_PUBLIC_API_URL,
+            assetUrl: process.env.NUXT_PUBLIC_ASSET_URL
+        }
+    },
     devtools: { enabled: true },
     components: true,
     css: [
