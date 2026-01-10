@@ -3,7 +3,7 @@
     <div class="flex flex-col-reverse items-start gap-6 lg:flex-row lg:gap-10">
       <div class="">
         <h2 class="text-3xl font-semibold text-dark dark:text-light lg:text-[40px]">
-          Hi, This Is <span class="text-primary">Cris Rayaan</span> 👋
+          Hi, This Is <span class="text-primary">Rashiqul Rony</span> 👋
         </h2>
         <p class="mt-4 text-lg text-muted dark:text-light/70 lg:mt-6 lg:text-2xl">
           A Passionate
@@ -555,7 +555,6 @@ export default {
   },
 
   mounted() {
-    this.getAbout()
   },
 
   methods: {

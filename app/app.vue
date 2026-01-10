@@ -6,5 +6,11 @@
     </NuxtLayout>
   </div>
 </template>
-<script setup lang="ts">
+
+<script setup>
+import { useAboutStore } from '@/stores/about'
+
+const aboutStore = useAboutStore()
+
+await aboutStore.fetchAbout()
 </script>

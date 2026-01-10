@@ -6,6 +6,9 @@ export default defineNuxtConfig({
             assetUrl: process.env.NUXT_PUBLIC_ASSET_URL
         }
     },
+    modules: [
+        '@pinia/nuxt'
+    ],
     devtools: { enabled: true },
     components: true,
     css: [
