@@ -2,7 +2,7 @@
   <div class="">
     <div class="rounded-2xl bg-white p-6 shadow dark:bg-black dark:shadow-dark">
       <div class="aspect-6/4 overflow-hidden rounded-lg bg-light pt-4 text-center dark:bg-dark-2">
-        <img  src="@/assets/img/profile.png" alt="" class="inline-block h-full w-full scale-110 object-contain object-bottom" />
+<!--        <img  src="@/assets/img/profile.png" alt="" class="inline-block h-full w-full scale-110 object-contain object-bottom" />-->
       </div>
 
       <div class="mt-6">
@@ -34,19 +34,19 @@
         <!-- Social -->
         <div class="mt-8 flex flex-wrap items-center gap-2">
           <a v-if="about?.linkedin" :href="about?.linkedin" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-transparent text-center text-slate-600 transition hover:text-primary focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-dark-2 dark:text-slate-500 dark:hover:text-primary">
-            <font-awesome-icon :icon="['fab', 'linkedin']" />
+            <img style="width: 25px" src="@/assets/img/linkedin.svg" alt="linkedin">
           </a>
           <a v-if="about?.git" :href="about?.git" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-transparent text-center text-slate-600 transition hover:text-primary focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-dark-2 dark:text-slate-500 dark:hover:text-primary">
-            <font-awesome-icon :icon="['fab', 'github']" />
+            <img style="width: 25px" src="@/assets/img/github.svg" alt="github">
           </a>
           <a v-if="about?.stack_overflow" :href="about?.stack_overflow" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-transparent text-center text-slate-600 transition hover:text-primary focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-dark-2 dark:text-slate-500 dark:hover:text-primary">
-            <font-awesome-icon :icon="['fab', 'stack-overflow']" />
+            <img style="width: 25px" src="@/assets/img/stackoverflow.svg" alt="stack-overflow">
           </a>
           <a v-if="about?.youtube" :href="about?.youtube" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-transparent text-center text-slate-600 transition hover:text-primary focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-dark-2 dark:text-slate-500 dark:hover:text-primary">
-            <font-awesome-icon :icon="['fab', 'youtube']" />
+            <img style="width: 25px" src="@/assets/img/youtube.svg" alt="youtube">
           </a>
           <a v-if="about?.facebook" :href="about?.facebook" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-transparent text-center text-slate-600 transition hover:text-primary focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-dark-2 dark:text-slate-500 dark:hover:text-primary">
-            <font-awesome-icon :icon="['fab', 'facebook']" />
+            <img style="width: 25px" src="@/assets/img/facebook.svg" alt="facebook">
           </a>
         </div>
       </div>
