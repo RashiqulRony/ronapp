@@ -36,7 +36,7 @@ export default {
   methods: {
     async getSkills() {
       const { $axios } = useNuxtApp()
-      await $axios.get('/skills?limit='+this.limit).then((response) => {
+      await $axios.get('/skills?limit='+this.limit+'&is_feature=1').then((response) => {
         this.skills = response.data
       }).catch((error) => {
         console.log(error)
