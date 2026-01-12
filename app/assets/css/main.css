@@ -1,3 +1,59 @@
 .mainLogo {
     width: 160px;
 }
+.skill-track {
+    display: flex;
+    width: max-content;
+}
+
+.skill-set {
+    display: flex;
+    gap: 3rem;
+    flex-shrink: 0;
+}
+
+.skill-logo {
+    width: 50px;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-logo:hover {
+    opacity: 1;
+}
+
+/* RIGHT → LEFT */
+@keyframes scroll-rtl {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* LEFT → RIGHT */
+@keyframes scroll-ltr {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.scroll-rtl {
+    animation: scroll-rtl 120s linear infinite;
+}
+
+.scroll-ltr {
+    animation: scroll-ltr 120s linear infinite;
+}
+
+/* pause on hover */
+.group:hover .scroll-rtl,
+.group:hover .scroll-ltr {
+    animation-play-state: paused;
+}

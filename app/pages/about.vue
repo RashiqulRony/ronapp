@@ -3,32 +3,18 @@
     <div class="flex flex-col-reverse items-start gap-6 lg:flex-row lg:gap-10">
       <div class="">
         <h2 class="text-3xl font-semibold text-dark dark:text-light lg:text-[40px]">
-          Hi, This Is <span class="text-primary">Rashiqul Rony</span> 👋
+          Hi, This Is <span class="text-primary">{{ about?.name }}</span> 👋
         </h2>
         <p class="mt-4 text-lg text-muted dark:text-light/70 lg:mt-6 lg:text-2xl">
           A Passionate
-          <span class="font-semibold text-dark dark:text-white">
-									Full Stack Developer
-								</span>
-          🖥️ &
-          <span class="font-semibold text-dark dark:text-white">
-									Product Designer
-								</span>
-          having
-          <span class="font-semibold text-dark dark:text-white">
-									12 years
-								</span>
-          of Experiences over 24+ Country Worldwide.
+          <span class="font-semibold text-dark dark:text-white">{{ about?.tagline }}</span>
         </p>
-      </div>
-      <div class="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-light px-4 py-2 text-center text-base font-medium leading-none text-primary dark:bg-dark-2 lg:text-lg">
-                        <span class="relative flex h-2 w-2 shrink-0">
-								<span
-                    class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75 dark:bg-light"></span>
-                        <span
-                            class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
-                        </span>
-        <span>Available For Hire</span>
+        <p class="mt-4 text-lg text-muted dark:text-light">
+          {{ about?.short_description }}
+        </p>
+        <p class="mt-4 text-lg text-muted dark:text-light">
+          {{ about?.about }}
+        </p>
       </div>
     </div>
 
@@ -36,19 +22,19 @@
       <div class="flex flex-wrap items-start gap-6 lg:gap-10">
         <div class="">
           <h2 class="text-3xl font-semibold text-dark dark:text-light lg:text-[40px]">
-            <span>40</span>+
+            <span>{{ about?.year_of_experience }}</span>+
           </h2>
           <p class="mt-2 text-muted">Year of Experience</p>
         </div>
         <div class="">
           <h2 class="text-3xl font-semibold text-dark dark:text-light lg:text-[40px]">
-            <span>86</span>+
+            <span>{{ about?.project_completed }}</span>+
           </h2>
           <p class="mt-2 text-muted">Project Completed</p>
         </div>
         <div class="">
           <h2 class="text-3xl font-semibold text-dark dark:text-light lg:text-[40px]">
-            <span>72</span>+
+            <span>{{ about?.happy_client }}</span>+
           </h2>
           <p class="mt-2 text-muted">Happy Client</p>
         </div>
@@ -68,57 +54,11 @@
     <!-- Brands -->
     <div class="mt-10 lg:mt-14">
       <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
-        Working With 50+ Brands ✨ Worldwide
+        Working With {{ skills.length }}+ Technologies
       </h3>
-      <div class="mt-8 grid grid-cols-[repeat(auto-fit,_minmax(60px,1fr))] gap-2 lg:grid-cols-[repeat(auto-fit,_minmax(80px,1fr))] lg:gap-4">
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/notion.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/webflow.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/mico.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/framer.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/zeplin.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/figma.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/notion.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/webflow.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/mico.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/framer.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/zeplin.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/figma.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/notion.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/webflow.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/mico.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
-        <div class="grid h-16 place-content-center rounded-lg bg-light p-3 dark:bg-dark-2 lg:h-20 lg:rounded-2xl lg:p-4">
-          <img src="@/assets/img/framer.svg" alt="" class="h-8 w-8 lg:h-10 lg:w-10" />
-        </div>
+      <div v-if="skills.length > 0" class="mt-8 space-y-6">
+        <SkillsSlider :skills="skills" direction="rtl" />
+        <SkillsSlider :skills="skills" direction="ltr" />
       </div>
     </div>
 
@@ -255,138 +195,30 @@
     </div>
 
     <!-- Awards -->
-    <div class="mt-10 lg:mt-14">
+    <div class="mt-10 lg:mt-14" v-if="trainings.length > 0">
       <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
-        Awards and Recognitions
+        Professional Training
       </h3>
 
       <div class="mt-8 space-y-4">
-        <div class="group relative grid grid-cols-1 items-center gap-4 rounded-lg border border-transparent bg-light p-6 transition hover:border-light hover:bg-white dark:bg-dark-2 dark:hover:border-primary dark:hover:bg-black md:grid-cols-4 xl:gap-10">
+        <div v-for="training in trainings" :key="'tng'+training.id" class="group relative grid grid-cols-1 items-center gap-4 rounded-lg border border-transparent bg-light p-6 transition hover:border-light hover:bg-white dark:bg-dark-2 dark:hover:border-primary dark:hover:bg-black md:grid-cols-4 xl:gap-10">
           <div class="flex flex-col gap-4 md:col-span-2 md:flex-row md:items-center md:gap-6">
-            <div class="grid h-10 w-10 shrink-0 place-content-center rounded-lg bg-white transition group-hover:bg-light dark:bg-black dark:group-hover:bg-dark-2">
-              <img src="@/assets/img/adobe.svg" alt="" class="h-6 w-6 shrink-0" />
-            </div>
             <div class="">
               <h5 class="font-medium leading-tight text-dark dark:text-light xl:text-lg xl:leading-tight">
-                Adobe Design Contest
+                {{ training?.topic }}
               </h5>
-              <p class="text-muted">2022 - 2023</p>
+              <p class="text-muted">Institute: {{ training?.institute }}</p>
             </div>
           </div>
 
           <div class="flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5 shrink-0">
-              <path d="M6 9.5a6 6 0 1 0 12 0 6 6 0 0 0-12 0Z" />
-              <path d="m12 15.5 3.4 5.89 1.598-3.233 3.598.232-3.4-5.889m-10.394 0-3.4 5.89L7 18.157l1.598 3.232 3.4-5.889" />
-            </svg>
             <h5 class="font-medium leading-tight text-dark dark:text-light">
-              Runner Up
+              Duration: {{ training?.duration }}
             </h5>
           </div>
 
           <div class="text-right">
-            <a href="#" class="inline-flex items-center justify-center gap-2 rounded bg-white px-3 py-2 text-center text-sm leading-none text-dark transition after:absolute after:inset-0 after:h-full after:w-full after:content-[''] hover:bg-light hover:text-primary dark:bg-black dark:text-light/70 dark:hover:bg-dark-2 dark:hover:text-primary">
-              <span>View Project</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0">
-                <path d="m9.917 4.583-5.834 5.834m.584-5.834h5.25v5.25" />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="group relative grid grid-cols-1 items-center gap-4 rounded-lg border border-transparent bg-light p-6 transition hover:border-light hover:bg-white dark:bg-dark-2 dark:hover:border-primary dark:hover:bg-black md:grid-cols-4 xl:gap-10">
-          <div class="flex flex-col gap-4 md:col-span-2 md:flex-row md:items-center md:gap-6">
-            <div class="grid h-10 w-10 shrink-0 place-content-center rounded-lg bg-white transition group-hover:bg-light dark:bg-black dark:group-hover:bg-dark-2">
-              <img src="@/assets/img/dribbble.svg" alt="" class="h-6 w-6 shrink-0" />
-            </div>
-            <div class="">
-              <h5 class="font-medium leading-tight text-dark dark:text-light xl:text-lg xl:leading-tight">
-                Dribbble Design Contest
-              </h5>
-              <p class="text-muted">2022 - 2023</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5 shrink-0">
-              <path d="M6 9.5a6 6 0 1 0 12 0 6 6 0 0 0-12 0Z" />
-              <path d="m12 15.5 3.4 5.89 1.598-3.233 3.598.232-3.4-5.889m-10.394 0-3.4 5.89L7 18.157l1.598 3.232 3.4-5.889" />
-            </svg>
-            <h5 class="font-medium leading-tight text-dark dark:text-light">
-              Gold Winner
-            </h5>
-          </div>
-
-          <div class="text-right">
-            <a href="#" class="inline-flex items-center justify-center gap-2 rounded bg-white px-3 py-2 text-center text-sm leading-none text-dark transition after:absolute after:inset-0 after:h-full after:w-full after:content-[''] hover:bg-light hover:text-primary dark:bg-black dark:text-light/70 dark:hover:bg-dark-2 dark:hover:text-primary">
-              <span>View Project</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0">
-                <path d="m9.917 4.583-5.834 5.834m.584-5.834h5.25v5.25" />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="group relative grid grid-cols-1 items-center gap-4 rounded-lg border border-transparent bg-light p-6 transition hover:border-light hover:bg-white dark:bg-dark-2 dark:hover:border-primary dark:hover:bg-black md:grid-cols-4 xl:gap-10">
-          <div class="flex flex-col gap-4 md:col-span-2 md:flex-row md:items-center md:gap-6">
-            <div class="grid h-10 w-10 shrink-0 place-content-center rounded-lg bg-white transition group-hover:bg-light dark:bg-black dark:group-hover:bg-dark-2">
-              <img src="@/assets/img/awwwards.png" alt="" class="h-6 w-6 shrink-0" />
-            </div>
-            <div class="">
-              <h5 class="font-medium leading-tight text-dark dark:text-light xl:text-lg xl:leading-tight">
-                Awwwards Nominee
-              </h5>
-              <p class="text-muted">2022 - 2023</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5 shrink-0">
-              <path d="M6 9.5a6 6 0 1 0 12 0 6 6 0 0 0-12 0Z" />
-              <path d="m12 15.5 3.4 5.89 1.598-3.233 3.598.232-3.4-5.889m-10.394 0-3.4 5.89L7 18.157l1.598 3.232 3.4-5.889" />
-            </svg>
-            <h5 class="font-medium leading-tight text-dark dark:text-light">
-              Runner Up
-            </h5>
-          </div>
-
-          <div class="text-right">
-            <a href="#" class="inline-flex items-center justify-center gap-2 rounded bg-white px-3 py-2 text-center text-sm leading-none text-dark transition after:absolute after:inset-0 after:h-full after:w-full after:content-[''] hover:bg-light hover:text-primary dark:bg-black dark:text-light/70 dark:hover:bg-dark-2 dark:hover:text-primary">
-              <span>View Project</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0">
-                <path d="m9.917 4.583-5.834 5.834m.584-5.834h5.25v5.25" />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="group relative grid grid-cols-1 items-center gap-4 rounded-lg border border-transparent bg-light p-6 transition hover:border-light hover:bg-white dark:bg-dark-2 dark:hover:border-primary dark:hover:bg-black md:grid-cols-4 xl:gap-10">
-          <div class="flex flex-col gap-4 md:col-span-2 md:flex-row md:items-center md:gap-6">
-            <div class="grid h-10 w-10 shrink-0 place-content-center rounded-lg bg-white transition group-hover:bg-light dark:bg-black dark:group-hover:bg-dark-2">
-              <img src="@/assets/img/behance.svg" alt="" class="h-6 w-6 shrink-0" />
-            </div>
-            <div class="">
-              <h5 class="font-medium leading-tight text-dark dark:text-light xl:text-lg xl:leading-tight">
-                Behance Design Contest
-              </h5>
-              <p class="text-muted">2022 - 2023</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5 shrink-0">
-              <path d="M6 9.5a6 6 0 1 0 12 0 6 6 0 0 0-12 0Z" />
-              <path d="m12 15.5 3.4 5.89 1.598-3.233 3.598.232-3.4-5.889m-10.394 0-3.4 5.89L7 18.157l1.598 3.232 3.4-5.889" />
-            </svg>
-            <h5 class="font-medium leading-tight text-dark dark:text-light">
-              Gold Winner
-            </h5>
-          </div>
-
-          <div class="text-right">
-            <a href="#" class="inline-flex items-center justify-center gap-2 rounded bg-white px-3 py-2 text-center text-sm leading-none text-dark transition after:absolute after:inset-0 after:h-full after:w-full after:content-[''] hover:bg-light hover:text-primary dark:bg-black dark:text-light/70 dark:hover:bg-dark-2 dark:hover:text-primary">
-              <span>View Project</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0">
-                <path d="m9.917 4.583-5.834 5.834m.584-5.834h5.25v5.25" />
-              </svg>
-            </a>
+            {{ training?.location }}
           </div>
         </div>
       </div>
@@ -416,128 +248,8 @@
       <div class="mt-8">
         <div class="swiper blog-carousel">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="">
-                <div class="relative">
-                  <a href="article.html" class="group block aspect-6/4 overflow-hidden rounded-lg">
-                    <img src="@/assets/img/blog-img-1.jpg" alt="" class="h-full w-full rounded-lg object-cover transition duration-700 group-hover:scale-105" />
-                  </a>
-
-                  <!-- Tags -->
-                  <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                    <a href="#" class="inline-flex items-center justify-center gap-2 rounded bg-white px-2 py-1 text-center text-xs leading-none text-primary shadow transition hover:bg-primary hover:text-white">
-                      Development
-                    </a>
-                  </div>
-                </div>
-                <div class="mt-6">
-                  <h2 class="text-xl font-medium xl:text-2xl">
-                    <a href="article.html" class="inline-block text-dark transition hover:text-primary dark:text-light/70 dark:hover:text-primary">
-                      Want To Upgrade Your Brain? Stop Doing These
-                      7 Things
-                    </a>
-                  </h2>
-
-                  <ul class="mt-4 flex flex-wrap items-center gap-2">
-                    <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
-                      15 min read
-                    </li>
-                    <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
-                      Nov 6, 2023
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="">
-                <div class="relative">
-                  <a href="article.html" class="group block aspect-6/4 overflow-hidden rounded-lg">
-                    <img src="@/assets/img/blog-img-2.jpg" alt="" class="h-full w-full rounded-lg object-cover transition duration-700 group-hover:scale-105" />
-                  </a>
-
-                  <!-- Tags -->
-                  <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                    <a href="#" class="inline-flex items-center justify-center gap-2 rounded bg-white px-2 py-1 text-center text-xs leading-none text-primary shadow transition hover:bg-primary hover:text-white">
-                      Development
-                    </a>
-                  </div>
-                </div>
-                <div class="mt-6">
-                  <h2 class="text-xl font-medium xl:text-2xl">
-                    <a href="article.html" class="inline-block text-dark transition hover:text-primary dark:text-light/70 dark:hover:text-primary">
-                      Want To Upgrade Your Brain? Stop Doing These
-                      7 Things
-                    </a>
-                  </h2>
-
-                  <ul class="mt-4 flex flex-wrap items-center gap-2">
-                    <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
-                      15 min read
-                    </li>
-                    <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
-                      Nov 6, 2023
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="">
-                <div class="relative">
-                  <a href="article.html" class="group block aspect-6/4 overflow-hidden rounded-lg">
-                    <img src="@/assets/img/blog-img-3.jpg" alt="" class="h-full w-full rounded-lg object-cover transition duration-700 group-hover:scale-105" />
-                  </a>
-
-                  <!-- Tags -->
-                  <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                    <a href="#" class="inline-flex items-center justify-center gap-2 rounded bg-white px-2 py-1 text-center text-xs leading-none text-primary shadow transition hover:bg-primary hover:text-white">
-                      Development
-                    </a>
-                  </div>
-                </div>
-                <div class="mt-6">
-                  <h2 class="text-xl font-medium xl:text-2xl">
-                    <a href="article.html" class="inline-block text-dark transition hover:text-primary dark:text-light/70 dark:hover:text-primary">
-                      Want To Upgrade Your Brain? Stop Doing These
-                      7 Things
-                    </a>
-                  </h2>
-
-                  <ul class="mt-4 flex flex-wrap items-center gap-2">
-                    <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
-                      15 min read
-                    </li>
-                    <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
-                      Nov 6, 2023
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <BlogGrid limit="5" slide="true" />
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div class="mt-10 lg:mt-14">
-      <div class="group flex gap-6 overflow-hidden rounded-lg bg-light p-6 dark:bg-dark-2">
-        <div class="relative flex min-w-full shrink-0 animate-infinite-scroll gap-6 group-hover:[animation-play-state:paused]">
-          <a href="contact.html" class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
-            Let's 👋 Work Together
-          </a>
-          <a href="contact.html" class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
-            Let's 👋 Work Together
-          </a>
-        </div>
-        <div class="relative flex min-w-full shrink-0 animate-infinite-scroll gap-6 group-hover:[animation-play-state:paused]">
-          <a href="contact.html" class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
-            Let's 👋 Work Together
-          </a>
-          <a href="contact.html" class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:mr-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]">
-            Let's 👋 Work Together
-          </a>
         </div>
       </div>
     </div>
@@ -550,19 +262,43 @@ export default {
   name: 'About',
   data() {
     return {
-
+      skills: [],
+      trainings: [],
     }
   },
 
   mounted() {
+    this.getSkills()
+    this.getTrainings()
   },
 
   methods: {
-    async getAbout() {
+    async getSkills() {
       const { $axios } = useNuxtApp()
-      const res = await $axios.get('/about')
-      console.log(res)
-    }
+      await $axios.get('/skills').then((response) => {
+        this.skills = response.data
+      }).catch((error) => {
+        console.log(error)
+      });
+    },
+    async getTrainings() {
+      const { $axios } = useNuxtApp()
+      await $axios.get('/trainings').then((response) => {
+        this.trainings = response.data
+      }).catch((error) => {
+        console.log(error)
+      });
+    },
+
+  },
+
+  computed: {
+    about() {
+      return useAboutStore().data
+    },
+    loading() {
+      return useAboutStore().loading
+    },
   },
 
   setup() {
