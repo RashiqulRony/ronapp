@@ -14,7 +14,6 @@
       <div v-for="(project, pk) in projects.data" class="group relative overflow-hidden rounded-lg bg-light p-4 pb-0 dark:bg-dark-2 md:p-6 md:pb-0" :key="pk">
         <div class="relative aspect-6/4 overflow-hidden rounded-t-lg">
           <img :src="useRuntimeConfig().public.assetUrl+'/portfolio/'+ project.image" :alt="project.title" class="h-full w-full rounded-t-lg object-cover object-top transition" />
-
           <a :href="useRuntimeConfig().public.assetUrl+'/portfolio/'+ project.image" data-gall="project-gallry-1" class="project-gallery-link absolute left-1/2 top-1/2 grid h-10 w-10 -translate-x-1/2 -translate-y-1/2 place-content-center rounded-full bg-white text-primary shadow-lg transition lg:invisible lg:-translate-y-[40%] lg:opacity-0 lg:group-hover:visible lg:group-hover:-translate-y-1/2 lg:group-hover:opacity-100">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-6 w-6">
               <path d="M10 4.167v11.666M4.167 10h11.666" />
