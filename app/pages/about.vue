@@ -256,93 +256,84 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, computed, onMounted } from 'vue'
+import { useHead, useNuxtApp } from '#imports'
 
-export default {
-  name: 'About',
-  data() {
-    return {
-      skills: [],
-      trainings: [],
-    }
-  },
+/* State */
+const skills = ref([])
+const trainings = ref([])
 
-  mounted() {
-    this.getSkills()
-    this.getTrainings()
-  },
 
-  methods: {
-    async getSkills() {
-      const { $axios } = useNuxtApp()
-      await $axios.get('/skills').then((response) => {
-        this.skills = response.data
-      }).catch((error) => {
-        console.log(error)
-      });
-    },
-    async getTrainings() {
-      const { $axios } = useNuxtApp()
-      await $axios.get('/trainings').then((response) => {
-        this.trainings = response.data
-      }).catch((error) => {
-        console.log(error)
-      });
-    },
+/* Store */
+const about = computed(() => useAboutStore().data)
 
-  },
+/* Axios */
+const { $axios } = useNuxtApp()
 
-  computed: {
-    about() {
-      return useAboutStore().data
-    },
-    loading() {
-      return useAboutStore().loading
-    },
-  },
-
-  setup() {
-    useHead({
-      title: 'RonApp | About',
-      meta: [
-        {
-          name: 'description',
-          content: 'Welcome to my website. This is the home page.'
-        },
-        {
-          name: 'keywords',
-          content: 'Nuxt 4, Vue 3, SEO, JavaScript'
-        },
-
-        // Open Graph
-        { property: 'og:title', content: 'Home | My Website' },
-        { property: 'og:description', content: 'Welcome to my website. This is the home page.' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://example.com/' },
-        { property: 'og:image', content: 'https://example.com/og-image.jpg' },
-
-        // Twitter
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Home | My Website' },
-        { name: 'twitter:description', content: 'Welcome to my website. This is the home page.' },
-        { name: 'twitter:image', content: 'https://example.com/og-image.jpg' }
-      ],
-      link: [
-        { rel: 'canonical', href: 'https://example.com/' }
-      ],
-      script: [
-        {
-          type: 'application/ld+json',
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Home | My Website",
-            "url": "https://example.com/"
-          })
-        }
-      ]
-    })
+/* Methods */
+const getSkills = async () => {
+  try {
+    const response = await $axios.get('/skills')
+    skills.value = response.data
+  } catch (error) {
+    console.log(error)
   }
 }
 
+const getTrainings = async () => {
+  try {
+    const response = await $axios.get('/trainings')
+    trainings.value = response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+/* Lifecycle */
+onMounted(() => {
+  getSkills()
+  getTrainings()
+})
+
+/* SEO */
+useHead({
+  title: `About | ${about.value.name}`,
+  meta: [
+    {
+      name: 'description',
+      content: `${about.value.about}`
+    },
+    {
+      name: 'keywords',
+      content: `${about.value.name}, ${about.value.tagline}, ${about.value.name}'s About, Web and App Developer, 8 years experience, Laravel, Codeigniter, Vue Js, React JS, Angular, Flutter, React Native, Object Oriented-PHP, JavaScript, Bootstrap and other platforms. Till date, Fullstack Developer, Software Engineer, Senior Software Engineer, Search Engine optimized`
+    },
+
+    // Open Graph
+    { property: 'og:title', content: `About | ${about.value.name}`},
+    { property: 'og:description', content: `${about.value.about}` },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://ronapp.page.gd/' },
+
+    // Twitter
+    { name: 'twitter:card', content: import('@/assets/img/profile.png') },
+    { name: 'twitter:title', content: `About | ${about.value.name}` },
+    { name: 'twitter:description', content: `${about.value.about}` },
+    { name: 'twitter:image', content: import('@/assets/img/profile.png') }
+  ],
+  link: [
+    { rel: 'canonical', href: `https://ronapp.page.gd/about` }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": `https://ronapp.page.gd/about`,
+        "@type": "WebPage",
+        "name": `About | ${about.value.name}`,
+        "url": `https://ronapp.page.gd/about`
+      })
+    }
+  ]
+})
 </script>

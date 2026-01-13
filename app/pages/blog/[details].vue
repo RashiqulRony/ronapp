@@ -64,97 +64,43 @@
   </div>
 </template>
 
-<script>
-export default {
-  computed: {
-    slug() {
-      return this.$route.params.slug
-    },
-  },
-  data() {
-    return {
-      blog: ''
-    }
-  },
-  mounted() {
-    this.getBlogs()
-  },
-  methods: {
-    async getBlogs() {
-      const { $axios } = useNuxtApp()
-      await $axios.get('blog/'+ this.slug).then((response) => {
-        this.blog = response.data
-        if (response.data) {
-          this.setSeo()
-        }
-      }).catch((error) => {
-        console.log(error)
-      });
-    },
-  },
-  setSeo() {
-    useHead({
-      title: this.blog.title,
+<script setup>
+const route = useRoute()
+const { $axios } = useNuxtApp()
+const slug = route.params.details
+const config = useRuntimeConfig()
+const { data: blog } = await $axios.get(`/blog/${slug}`)
+/* SEO */
+useHead(() => {
+  if (!blog) return {}
+  const image = blog.image ? `${config.public.assetUrl}/blog/${blog.image}` : ''
+  return {
+    title: blog.title,
+    meta: [
+      { name: 'description', content: blog.subtitle || '' },
+      { name: 'keywords', content: `Rashiqul Rony, Blog, ${blog.title}', Web and App Developer, 8 years experience, Laravel, Codeigniter, Vue Js, React JS, Angular, Flutter, React Native, Object Oriented-PHP, JavaScript, Bootstrap and other platforms. Till date, Fullstack Developer, Software Engineer, Senior Software Engineer, Search Engine optimized` },
 
-      meta: [
-        {
-          name: 'description',
-          content: this.blog.subtitle || ''
-        },
-        {
-          name: 'keywords',
-          content:  'Rashiqul Rony, Blogs, ' + this.blog.title
-        },
 
-        /* Open Graph */
-        {
-          property: 'og:title',
-          content: this.blog.title
-        },
-        {
-          property: 'og:description',
-          content: this.blog.subtitle || ''
-        },
-        {
-          property: 'og:type',
-          content: 'article'
-        },
-        {
-          property: 'og:url',
-          content: `https://ronapp.page.gd/blog/${this.slug}`
-        },
-        {
-          property: 'og:image',
-          content: this.blog.image ? useRuntimeConfig().public.assetUrl+'/blog/'+ this.blog?.image : ''
-        },
+      // Open Graph
+      { property: 'og:title', content: blog.title },
+      { property: 'og:description', content: blog.subtitle || '' },
+      { property: 'og:type', content: 'article' },
+      { property: 'og:url', content: `https://ronapp.page.gd/blog/${slug}` },
+      { property: 'og:image', content: image },
 
-        /* Twitter */
-        {
-          name: 'twitter:card',
-          content: useRuntimeConfig().public.assetUrl+'/blog/'+ this.blog?.image
-        },
-        {
-          name: 'twitter:title',
-          content: this.blog.title
-        },
-        {
-          name: 'twitter:description',
-          content: this.blog.subtitle || ''
-        },
-        {
-          name: 'twitter:image',
-          content: this.blog.image ? useRuntimeConfig().public.assetUrl+'/blog/'+ this.blog?.image : ''
-        }
-      ],
-
-      link: [
-        {
-          rel: 'canonical',
-          href: `https://ronapp.page.gd/blog/${this.slug}`
-        }
-      ]
-    })
+      // Twitter
+      { name: 'twitter:card', content: image },
+      { name: 'twitter:title', content: blog.title },
+      { name: 'twitter:description', content: blog.subtitle || '' },
+      { name: 'twitter:image', content: image }
+    ],
+    link: [
+      {
+        rel: 'canonical',
+        href: `https://ronapp.page.gd/blog/${slug}`
+      }
+    ]
   }
-}
+})
 </script>
 
