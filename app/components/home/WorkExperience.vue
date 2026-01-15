@@ -42,7 +42,6 @@
           <div class="flex items-center gap-3">
             <div class="grid h-8 w-8 shrink-0 place-content-center rounded-lg bg-light dark:bg-dark-2">
               <img v-if="exp.organization_logo" :src="useRuntimeConfig().public.assetUrl+'/work-experience/'+ exp.organization_logo" :alt="exp.organization" class="w-5" />
-              <img v-else src="@/assets/img/google.svg" alt="" class="h-5 w-5" />
             </div>
             <div class="">
               <h6 class="text-base font-semibold text-dark dark:text-light/70">
