@@ -248,7 +248,7 @@
       <div class="mt-8">
         <div class="swiper blog-carousel">
           <div class="swiper-wrapper">
-            <BlogGrid limit="5" slide="true" />
+            <BlogGridAbout limit="5" />
           </div>
         </div>
       </div>

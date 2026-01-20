@@ -1,7 +1,6 @@
 <template>
-  <div class="mt-10 lg:mt-14">
-    <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
-      <div class="" v-for="blog in blogs.data">
+    <div class="swiper-slide blog-card" v-for="blog in blogs.data">
+      <div class="">
         <div class="relative">
           <NuxtLink :to="'/blog/'+blog.slug"  class="group block aspect-6/4 overflow-hidden rounded-lg">
             <img :src="useRuntimeConfig().public.assetUrl+'/blog/'+ blog.image" :alt="blog?.title" class="h-full w-full rounded-lg object-cover transition duration-700 group-hover:scale-105" />
@@ -31,14 +30,6 @@
         </div>
       </div>
     </div>
-
-    <Pagination v-if="blogs.links"
-                :links="blogs.links"
-                :currentPage="blogs.current_page"
-                :from="blogs.from" :to="blogs.to"
-                :total="blogs.total"
-                v-on:changepage="getBlogs($event)"  />
-  </div>
 </template>
 
 <script setup>
@@ -60,9 +51,9 @@ const blogs = ref([])
 const { $axios } = useNuxtApp()
 
 /* Methods */
-const getBlogs = async (page = 1) => {
+const getBlogs = async () => {
   try {
-    const apiUrl = props.limit === 0 ? '/blogs' : `/blogs?limit=${props.limit}&page=${page}`
+    const apiUrl = props.limit === 0 ? '/blogs' : `/blogs?limit=${props.limit}`
     const response = await $axios.get(apiUrl)
     blogs.value = response.data
   } catch (error) {

@@ -27,7 +27,7 @@
     <div class="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4 lg:mt-14">
       <NuxtLink v-for="service in services" :to="'/service/' + service?.slug" :key="'ser'+service.id" class="rounded-2xl bg-light p-2 text-center dark:bg-dark-2 md:p-4">
         <div class="grid place-content-center rounded-lg bg-white p-6 dark:bg-black">
-          <img :src="useRuntimeConfig().public.assetUrl+'/service/'+ service?.icon" :alt="service?.title">
+          <img :src="useRuntimeConfig().public.assetUrl+'/service/icon/'+ service?.icon" :alt="service?.title">
         </div>
         <p class="mt-3 text-base font-medium text-dark dark:text-light/70">
           {{ service?.title }}

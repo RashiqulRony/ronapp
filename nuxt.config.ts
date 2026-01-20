@@ -3,7 +3,8 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             apiUrl: process.env.NUXT_PUBLIC_API_URL,
-            assetUrl: process.env.NUXT_PUBLIC_ASSET_URL
+            assetUrl: process.env.NUXT_PUBLIC_ASSET_URL,
+            siteUrl: process.env.NUXT_PUBLIC_SITE_URL
         }
     },
     modules: [
