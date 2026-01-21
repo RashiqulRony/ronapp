@@ -2,13 +2,7 @@
   <nav v-if="links?.length > 3" class="mt-10 flex items-center justify-center gap-1.5">
     <template v-for="(link, index) in links" :key="index">
       <!-- Disabled -->
-      <span
-          v-if="link.url === null"
-          class="inline-flex min-h-9 min-w-9 items-center justify-center rounded-lg border
-               border-light text-gray-400 bg-gray-100 cursor-not-allowed
-               dark:border-dark dark:bg-slate-800 dark:text-muted"
-          v-html="link.label"
-      ></span>
+      <span v-if="link.url === null"></span>
 
       <!-- Button -->
       <button

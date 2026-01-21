@@ -9,7 +9,7 @@
     </div>
   </div>
   <!-- Projects -->
-  <Projects :limit="2" />
+  <Projects :limit="3" />
   <!-- Services -->
   <Services :limit="4" />
 

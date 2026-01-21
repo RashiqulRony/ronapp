@@ -16,5 +16,51 @@
 </template>
 
 <script setup>
+import {useHead} from "#imports";
+
+/* Store */
+const about = computed(() => useAboutStore().data)
+
+/* SEO */
+useHead({
+  title: `RonApp | Blogs`,
+  meta: [
+    {
+      name: 'description',
+      content: `${about.value.about} & Blogs`
+    },
+    {
+      name: 'keywords',
+      content: `${about.value.name}, ${about.value.tagline}, ${about.value.name}'s Blogs, Web and App Developer, 8 years experience, Laravel, Codeigniter, Vue Js, React JS, Angular, Flutter, React Native, Object Oriented-PHP, JavaScript, Bootstrap and other platforms. Till date, Fullstack Developer, Software Engineer, Senior Software Engineer, Search Engine optimized`
+    },
+
+    // Open Graph
+    { property: 'og:title', content: `Blogs | ${about.value.name}`},
+    { property: 'og:description', content: `${about.value.about}` },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://ronapp.page.gd/' },
+
+    // Twitter
+    { name: 'twitter:card', content: import('@/assets/img/profile.png') },
+    { name: 'twitter:title', content: `Blogs | ${about.value.name}` },
+    { name: 'twitter:description', content: `${about.value.about}` },
+    { name: 'twitter:image', content: import('@/assets/img/profile.png') }
+  ],
+  link: [
+    { rel: 'canonical', href: `https://ronapp.page.gd/blog` }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": `https://ronapp.page.gd/blog`,
+        "@type": "WebPage",
+        "name": `About | ${about.value.name}`,
+        "url": `https://ronapp.page.gd/blog`
+      })
+    }
+  ]
+})
+
 
 </script>
