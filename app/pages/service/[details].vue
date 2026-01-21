@@ -23,8 +23,8 @@
       </div>
     </div>
 
-    <Features />
-
+    <h3 v-if="service.features.length > 0" class="text-2xl font-semibold dark:text-light mt-10">Feature of <span class="text-blue-600">{{ service?.title }}</span></h3>
+    <Features :features="service.features" />
   </div>
 </template>
 

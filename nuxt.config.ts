@@ -7,9 +7,7 @@ export default defineNuxtConfig({
             siteUrl: process.env.NUXT_PUBLIC_SITE_URL
         }
     },
-    modules: [
-        '@pinia/nuxt'
-    ],
+    modules: ['@pinia/nuxt', 'nuxt-anchorscroll'],
     devtools: { enabled: true },
     components: true,
     css: [
