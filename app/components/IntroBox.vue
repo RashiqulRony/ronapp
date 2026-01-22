@@ -2,7 +2,7 @@
   <div class="">
     <div class="rounded-2xl bg-white p-6 shadow dark:bg-black dark:shadow-dark">
       <div class="aspect-6/4 overflow-hidden rounded-lg bg-light pt-4 text-center dark:bg-dark-2">
-<!--        <img  src="@/assets/img/profile.png" alt="" class="inline-block h-full w-full scale-110 object-contain object-bottom" />-->
+        <img  src="@/assets/img/profile2.png" alt="" class="inline-block h-full w-full scale-110 object-contain object-bottom" />
       </div>
 
       <div class="mt-6">
@@ -54,21 +54,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
+<script setup>
+/* Store */
+const about = computed(() => useAboutStore().data)
 
-    }
-  },
-  computed: {
-    about() {
-      return useAboutStore().data
-    },
-    loading() {
-      return useAboutStore().loading
-    },
-  },
-
-}
 </script>

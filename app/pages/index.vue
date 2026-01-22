@@ -66,12 +66,10 @@
 </template>
 
 <script setup>
-definePageMeta({
-  scrollToTop: true
-})
-
 import Skills from '@/components/home/Skills.vue'
 import WorkExperience from '@/components/home/WorkExperience.vue'
 import Services from '@/components/home/Services.vue'
 import Projects from '@/components/home/Projects.vue'
+
+
 </script>

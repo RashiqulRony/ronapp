@@ -30,9 +30,9 @@
           <div class="flex flex-wrap items-start justify-between py-4 md:p-6">
             <div class="">
               <h3 class="text-lg font-medium md:text-xl lg:text-2xl">
-                <a href="#" class="border-b border-transparent text-dark transition hover:border-b-primary hover:text-primary dark:text-light/80 dark:hover:text-primary">
+                <NuxtLink :to="'/portfolio/'+ portfolio.slug" class="border-b border-transparent text-dark transition hover:border-b-primary hover:text-primary dark:text-light/80 dark:hover:text-primary">
                   {{ portfolio.title }}
-                </a>
+                </NuxtLink>
               </h3>
               <p class="text-sm text-muted lg:text-base">
                 {{ portfolio.short_description }}
